@@ -21,17 +21,15 @@ const images = [
   "https://ucarecdn.com/41b78879-4ec9-4dbd-b30b-79a98ef90b97/CFCA26CF55A240D9BC2983E88346AB76.jpg",
 ];
 
-const Second = React.memo(() => {
-  return (
-    <View style={style.tab}>
-      {images.map((item, idx) => (
-        <Image key={idx} style={style.img} source={item} />
-        // uncomment the line below to see performance with react native Image component
-        // <RNImage key={idx} style={style.img} source={{ uri: item }} />
-      ))}
-    </View>
-  );
-});
+const Second = () => (
+  <View style={style.tab}>
+    {images.map((item, idx) => (
+      <Image key={idx} style={style.img} source={item} />
+      // uncomment the line below to see performance with react native Image component
+      // <RNImage key={idx} style={style.img} source={{ uri: item }} />
+    ))}
+  </View>
+);
 
 const style = StyleSheet.create({
   tab: { flexDirection: "row", gap: 16, flexWrap: "wrap" },
